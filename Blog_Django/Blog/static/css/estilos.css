@@ -1,0 +1,39 @@
+
+.contenedor{
+    width: 80%;
+    height: 200px;
+    background: black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    align-content: center;
+    
+    padding: 5px;
+    margin: 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.cards{
+    
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border:solid 2px aqua;
+    background: rgb(221, 216, 216);
+    text-align: center;
+    
+}
+
+p{
+    align-items: center;
+    color: rgb(3, 3, 3);
+}
+
+
+button{
+    background: red;
+    color: aqua;
+    border-radius: 10px;
+}

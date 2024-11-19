@@ -1,1 +1,26 @@
-<h1>Principal</h1>
+{% extends "base.html" %}
+{% block title %} HOme {% endblock %}
+  {% block content %}
+  {% load static %}
+
+  
+        <a href="{% url 'crear_publicacion'%}">crear</a>
+        
+        {% if publicaciones%}
+        {% for publicacion in publicaciones %}
+        
+      <div class="contenedor">
+        <div class="cards">
+          <a href="{% url 'descripcion' publicacion.id %}"> <h1>{{ publicacion.titulo }}</h1></a>
+          <p>{{ publicacion.contenido|slice:":40"  }}...</p>
+          <p>{{ publicacion.autor }}</p>
+          <p>{{ publicacion.fecha_publicacion }}</p>
+          
+        </div>
+        
+      
+    </div>
+        
+    {% endfor %}
+    {% endif %}
+    {% endblock %}

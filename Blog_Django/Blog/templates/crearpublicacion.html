@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{%block title%} Formulario {% endblock title%}
+{% block content%}
+
+<!-- 
+<form method="POST" action="">
+    <div class="mb-3">
+        
+    
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <button type="submit"> Enviar </button>
+</div>
+    
+</form> -->
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    <!-- Título -->
+    <div class="form-group">
+        <label for="{{ form.titulo.id_for_label }}">Título</label>
+        {{ formulario.titulo }}
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-group">
+        <label for="{{ formulario.contenido.id_for_label }}">Descripción</label>
+        {{ formulario.contenido }}
+    </div>
+
+    <!-- Autor -->
+    <div class="form-group">
+        <label for="{{ form.autor.id_for_label }}">Autor</label>
+        {{ formulario.autor }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.autor.id_for_label }}">Fecha publicacion</label>
+        {{ formulario.fecha_publicacion }}
+    </div>
+
+    <!-- Botón Enviar -->
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock%}
