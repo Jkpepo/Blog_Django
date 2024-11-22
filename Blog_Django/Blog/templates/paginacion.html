@@ -1,0 +1,34 @@
+<div class="pagination justify-content-center">
+    <ul class="pagination ">
+        <!-- Si hay una publicación anterior, muestro el enlace anterior -->
+        {% if publicaciones.has_previous %}
+            <!-- <li class="page-item">
+                <a class="page-link " href="?page=1" tabindex="-1">Primera</a>
+            </li> -->
+            <li class="page-item">
+                <a class="page-link" href="?page={{ publicaciones.previous_page_number }}" aria-label="Anterior">
+                    <span aria-hidden="true">&laquo; Anterior</span>
+                </a>
+            </li>
+        {% endif %}
+
+        <!-- Mostrar los enlaces de páginas -->
+        {% for pagina in paginas %}
+            <li class="page-item {% if pagina == publicaciones.number %}active{% endif %}">
+                <a class="page-link" href="?page={{pagina}}">{{pagina}}</a>
+            </li>
+        {% endfor %}
+
+        <!-- Si hay una publicación siguiente, muestro el enlace siguiente -->
+        {% if publicaciones.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ publicaciones.next_page_number }}" aria-label="Siguiente">
+                    <span aria-hidden="true">Siguiente &raquo;</span>
+                </a>
+            </li>
+            <!-- <li class="page-item">
+                <a class="page-link" href="?page={{ publicaciones.paginator.num_pages }}">Última</a>
+            </li> -->
+        {% endif %}
+    </ul>
+</div>

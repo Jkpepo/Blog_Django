@@ -13,33 +13,29 @@
 </div>
     
 </form> -->
+
 <form action="" method="POST">
     {% csrf_token %}
     
-    <!-- Título -->
+    
     <div class="form-group">
         <label for="{{ form.titulo.id_for_label }}">Título</label>
         {{ formulario.titulo }}
     </div>
-
-    <!-- Descripción -->
     <div class="form-group">
         <label for="{{ formulario.contenido.id_for_label }}">Descripción</label>
         {{ formulario.contenido }}
     </div>
-
-    <!-- Autor -->
     <div class="form-group">
         <label for="{{ form.autor.id_for_label }}">Autor</label>
         {{ formulario.autor }}
     </div>
-
     <div class="form-group">
-        <label for="{{ form.autor.id_for_label }}">Fecha publicacion</label>
+        <label for="{{ form.fecha_publicacion.id_for_label }}">Fecha publicacion</label>
         {{ formulario.fecha_publicacion }}
     </div>
 
-    <!-- Botón Enviar -->
+    
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 {% endblock%}

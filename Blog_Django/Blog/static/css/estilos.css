@@ -1,39 +1,157 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .contenedor{
-    width: 80%;
-    height: 200px;
-    background: black;
+    width: 60%;
+    height: 250px;
     display: flex;
     justify-content:center;
     align-items: center;
     align-content: center;
-    
-    padding: 5px;
-    margin: 10px;
+    padding-bottom: 5px;
     border-radius: 30px;
-    margin-top: 10px;
+    margin: auto;
+    margin-bottom: 10px;
 }
 
 .cards{
     
-    padding: 5px;
+    padding: 15px;
+    
     border-radius: 10px;
     width: 100%;
     height: 100%;
     border:solid 2px aqua;
     background: rgb(221, 216, 216);
-    text-align: center;
+    
+
+}
+
+.cards img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50%;
+    
     
 }
 
-p{
-    align-items: center;
-    color: rgb(3, 3, 3);
+.cards p {
+    
+    margin-left: 10px;
+    float: left;
+    margin-right: 50px;
+    
 }
+
+
 
 
 button{
-    background: red;
-    color: aqua;
+    background: rgb(3, 160, 160);
+    box-shadow: 15px 15px 15px rgba(4, 209, 147, 0.2);
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+
+}
+.cards hr{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.elementos{
+
+    align-items: center;
+    margin: auto;
+    display: grid;
+}
+a{
+   
+    margin: auto;
+}
+.elementos p{
+    margin: auto;
+    padding: 5px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(270deg, rgb(0, 119, 255), rgb(0, 255, 255),rgb(198, 192, 255));
+    
+    padding-top: 10px;
+   
+
+}
+
+nav  {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+nav a{
+    padding-right: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+nav input{
+   
+    margin: 10px;
     border-radius: 10px;
 }
+header h1{
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    color: white;
+}
+.imagen img{
+    border-radius: 50%;
+    width: 50%;  /* La imagen no se excederá del contenedor */
+    height: auto; 
+    
+}
+.principal{
+    
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    
+}
+.conten{
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    margin: 70px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+.elemento{
+    z-index: -100;
+    background: chartreuse;
+   margin: -50px;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
