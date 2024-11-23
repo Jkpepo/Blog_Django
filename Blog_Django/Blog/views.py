@@ -8,9 +8,12 @@ def home(request):
     lista=Publicaciones.objects.all().order_by("-id")
     paginator = Paginator(lista, 3)
     pagina=request.GET.get("page") or 1 #pido el page o en su defecto 1
-    publicaciones=paginator.get_page(pagina)# obtengo el numero paginas
+    publicaciones=paginator.get_page(pagina)# obtengo la pagina
     pagina_actual=int(pagina)#transformo la pagina en un numero 
-    paginas=range(1,publicaciones.paginator.num_pages +1)
+    rango_inicio = (pagina_actual - 1) // 5 * 5 + 1  # Inicio del rango de páginas (páginas 1-5, 6-10, etc.)
+    rango_fin = min(rango_inicio + 4, paginator.num_pages)  # Fin del rango de páginas (no superar el número total de páginas)
+    paginas = range(rango_inicio, rango_fin + 1)#aqui le paso el rango inicio y fin 
+    # paginas=range(1,publicaciones.paginator.num_pages +1)# esto es para que funcione normal a medida que hay mas elementos crea mas paginas
     return render(request,"home.html",{"publicaciones":publicaciones,"paginas":paginas,"pagina_actual":pagina_actual})
 
 def base(request):

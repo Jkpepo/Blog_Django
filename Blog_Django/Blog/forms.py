@@ -6,3 +6,4 @@ class PublicacionesForm(forms.ModelForm):
         model=Publicaciones
         fields= '__all__'
         
+    

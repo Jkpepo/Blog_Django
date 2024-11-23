@@ -3,20 +3,24 @@
 {% block content %}
 
 
-<div class="principal">prueba
+<div class="principal">
     <div class="conten">
-        <h1>{{ publicacion.titulo }}</h1>
-        <p>{{ publicacion.contenido }}</p>
-        <div class="elemento">
-
+        <div class="todo">
+            
+            <h1>{{ publicacion.titulo }}</h1>
+            <p>{{ publicacion.contenido }}</p>
+            <hr>
+            
         </div>
+        
+        <div class="autor-publi">
+            
+            <h5>{{publicacion.autor}}</h5>
+            <h6>{{publicacion.fecha_publicacion}}</h6>
+        </div>
+        
 
+    </div><!--conten-->
 
-
-    </div>
-
-
-
-
-</div>
+</div> <!--principal-->
 {% endblock %}

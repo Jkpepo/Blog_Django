@@ -5,35 +5,30 @@
  
   
         <a href="{% url 'crear_publicacion'%}">crear</a>
-
-      
         
         {% if publicaciones%}
-        {% for publicacion in publicaciones %}
-        
-      <div class="contenedor">
-        <div class="cards">
-           <img src="{% static 'img/ford.jpg' %}" alt="Ford 2024">
-            <p>{{ publicacion.autor }}</p>
-            <p>{{ publicacion.fecha_publicacion }}</p>
-            <hr>
-        
-          <div class="elementos">
-          <a href="{% url 'descripcion' publicacion.id %}"> <h1>{{ publicacion.titulo }}</h1></a>
+              {% for publicacion in publicaciones %}
+              
+        <div class="cuadro">
           
-            <p>{{ publicacion.contenido|slice:":40"  }}...</p>
-          </div>
-          </div>
-        </div>
-      
-   
+                <h5>{{publicacion.autor}}</h5>
+                <h6>{{publicacion.fecha_publicacion}}</h6>
+                <a href="{% url 'descripcion' publicacion.id %}"> <h1>{{ publicacion.titulo }}</h1></a>
+                <p>{{ publicacion.contenido|slice:":40"  }}...</p>
+            
+                {% endfor %}
+                {% endif %}
+          
+        <div class="malparido"></div>
 
- 
-        
-    {% endfor %}
-    {% endif %}
-    {% include "paginacion.html"%}
+  </div>
+
+  {% include "paginacion.html"%}
     {% endblock %}
 
    
-   
+    
+    <h1>{{ publicacion.titulo }}</h1>
+                  
+                  
+                  
