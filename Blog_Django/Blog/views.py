@@ -33,6 +33,9 @@ def crear_publicacion(request):
             return render(request,"crearpublicacion.html",{"formulario":formulario})
     formulario=PublicacionesForm()
     return render (request,"crearpublicacion.html",{'formulario':formulario})
+
+def nosotros(request):
+    return render(request,"nosotros.html")
     
 
 

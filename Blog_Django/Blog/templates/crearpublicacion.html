@@ -14,7 +14,7 @@
     
 </form> -->
 
-<form action="" method="POST">
+<form action="" method="POST" class="formulario">
     {% csrf_token %}
     
     
@@ -23,7 +23,7 @@
         {{ formulario.titulo }}
     </div>
     <div class="form-group">
-        <label for="{{ formulario.contenido.id_for_label }}">Descripción</label>
+        <label   for="{{ formulario.contenido.id_for_label }}" >Descripción</label>
         {{ formulario.contenido }}
     </div>
     <div class="form-group">

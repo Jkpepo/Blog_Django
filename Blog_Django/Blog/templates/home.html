@@ -6,27 +6,37 @@
   
         <a href="{% url 'crear_publicacion'%}">crear</a>
         
-        {% if publicaciones%}
-              {% for publicacion in publicaciones %}
-              
         <div class="cuadro">
-          
-                <h5>{{publicacion.autor}}</h5>
-                <h6>{{publicacion.fecha_publicacion}}</h6>
-                <a href="{% url 'descripcion' publicacion.id %}"> <h1>{{ publicacion.titulo }}</h1></a>
-                <p>{{ publicacion.contenido|slice:":40"  }}...</p>
-            
-                {% endfor %}
+            <div class="contenido">
+                {% if publicaciones %}
+                    {% for publicacion in publicaciones %}
+                        <div class="prueba">
+                              <div class="cabeza-tarjeta">
+                                    <img src="{% static 'img/user default.avif' %}" alt="Ford 2024">
+                                    <h5>{{publicacion.autor|title}}</h5>
+                                    <h6>{{publicacion.fecha_publicacion}}</h6>  
+                                   
+                              </div>
+                            
+                              <hr>
+                            <a href="{% url 'descripcion' publicacion.id %}"> <h1>{{ publicacion.titulo|title }}</h1></a>
+                            <p>{{ publicacion.contenido|slice:":40" }}...</p>
+                        </div>
+                    {% endfor %}
                 {% endif %}
-          
-        <div class="malparido"></div>
-
-  </div>
-
-  {% include "paginacion.html"%}
-    {% endblock %}
-
-   
+            </div>
+        
+            <div class="malparido">
+                <h1> Post Destacados</h1>
+                <img src="{% static 'img/ia.jpg' %}" alt="" srcset="">
+                <p>La inteligencia artificial es una tecnología en continua evolución, con un potencial transformador que afecta significativamente 
+                  en la forma en que las empresas trabajan. Esta tendencia está reconfigurando el panorama laboral y ya se está observando su impacto.</p>
+                <a href="https://www.semantic-systems.com/semantic-noticias/articulos-tecnologicos/como-la-inteligencia-artificial-esta-cambiando-el-futuro-de-las-empresas/" target="_blank"> Leer Más</a>
+            </div>
+        </div>
+        {% include "paginacion.html" %}
+        {% include "footer.html" %}
+        {% endblock %}
     
     <h1>{{ publicacion.titulo }}</h1>
                   

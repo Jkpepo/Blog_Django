@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Nosotros {% endblock %}
+
+  {% block content %}
+  {% load static %}
+<article>
+    
+    <div class="contenedorarticle">
+        <h1>Gamo Dev</h1>
+        <h3>Empresa de Desarrollo de Software</h3>
+        <p>Somos tu aliado estratégico en el camino hacia la transformación digital, 
+            ofreciéndote soluciones tecnológicas de vanguardia que se adaptan a las necesidades específicas de las empresas del sector 
+            constructor, inmobiliario, de infraestructura y bienes raíces en Colombia y América Latina.   
+        </p>
+    </div>
+    <div class="historia">
+
+        <p>Nuestra empresa fue crea por Juan Camilo Garcia Monsalve </p>
+        <p>Nace Gamo Dev en el 2011 con el objetivo de simplificar y optimizar la industria a través de la tecnologia </p>
+    </div>
+</article>
+<aside>
+    <div class="contenedoraside">
+        <marquee behavior="" direction="right">
+            <img src="{% static 'img/python.png'%}" alt="" srcset="">
+            <img src="{% static 'img/pngwing.com.png'%}" alt="" srcset="">
+            <img src="{% static 'img/sqlite.png'%}" alt="" srcset="">
+            <img src="{% static 'img/css.png'%}" alt="" srcset="">
+            <img src="{% static 'img/js.png'%}" alt="" srcset="">
+            <img src="{% static 'img/boostrap.png'%}" alt="" srcset="">
+            <img src="{% static 'img/html.png'%}" alt="" srcset="">
+        </marquee>
+        
+    </div>
+</aside>
+{% include "footer.html"%}
+{% endblock %}
