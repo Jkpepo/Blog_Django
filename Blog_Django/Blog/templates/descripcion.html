@@ -3,11 +3,11 @@
 {% block content %}
 
 
-<div class="principal">
-    <div class="conten">
-        <div class="todo">
+<div class="principal_descripcion">
+    <div class="contenido_descripcion">
+        <div class="info_descripcion">
             
-            <h1>{{ publicacion.titulo }}</h1>
+            <h1>{{ publicacion.titulo|title }}</h1>
             <p>{{ publicacion.contenido }}</p>
             <hr>
             
@@ -19,9 +19,14 @@
             <h6>{{publicacion.fecha_publicacion}}</h6>
         </div>
         
-
+        
+        
     </div><!--conten-->
-
 </div> <!--principal-->
-
+<div class="botones">
+    
+    <a href= "{% url 'editar' publicacion.id %} "class="boton_editar" >Editar</a>
+<a href= "{% url 'editar' publicacion.id %} "class="boton_editar" >Eliminar</a>
+</div>
+{% include "footer.html" %}
 {% endblock %}

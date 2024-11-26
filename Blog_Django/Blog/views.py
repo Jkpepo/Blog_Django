@@ -1,11 +1,12 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from . models import Publicaciones
 from . forms import PublicacionesForm 
 from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
-    lista=Publicaciones.objects.all().order_by("-id")
+    
+    lista=Publicaciones.objects.all().order_by("-fecha_publicacion")
     paginator = Paginator(lista, 3)
     pagina=request.GET.get("page") or 1 #pido el page o en su defecto 1
     publicaciones=paginator.get_page(pagina)# obtengo la pagina
@@ -36,6 +37,17 @@ def crear_publicacion(request):
 
 def nosotros(request):
     return render(request,"nosotros.html")
+
+def editar(request,id):
+    formulario = get_object_or_404(Publicaciones,pk=id)
+    if request.method == 'POST':
+        formulario = PublicacionesForm(request.POST, instance=formulario)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('home')
+    else:
+        formulario = PublicacionesForm(instance=formulario)
+    return render(request,'editar_publicacion.html',{'formulario':formulario})
     
 
 

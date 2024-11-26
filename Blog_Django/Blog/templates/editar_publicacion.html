@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%block title%} Editar Formulario {% endblock title%}
+{% block content%}
+{% load static %}
+
+
+
+<form action="" method="POST" class="formulario">
+    <h1>Editar Blog</h1>
+    {% csrf_token %}
+    
+    
+    <div class="form-group">
+        <label for="{{ form.titulo }}">Título</label>
+        {{ formulario.titulo }}
+    </div>
+    <div class="form-group">
+        <label   for="{{ formulario.contenido.id_for_label }}" >Descripción</label>
+        {{ formulario.contenido }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.autor }}">Autor</label>
+        {{ formulario.autor }}
+    </div>
+    <div class="form-group">
+        <label  for="{{ form.fecha_publicacion }}" >Fecha publicacion</label>
+        {{ formulario.fecha_publicacion }}
+
+        
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>
+{% endblock%}

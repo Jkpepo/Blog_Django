@@ -10,7 +10,7 @@
 body{
     background: rgba(218, 216, 216, 0.247);
 }
-
+ /* Estilos de mi barra de navegacion */
 header{
     display: flex;
     justify-content: space-between;
@@ -61,31 +61,32 @@ header h1{
     font-weight: 400;
     color: rgba(80, 76, 76, 0.753);
 }
-.imagen img{
+/* .imagen img{
     border-radius: 50%;
-    width: 50%;  /* La imagen no se excederá del contenedor */
+    width: 50%;  
     height: auto; 
+    background: red;
     
-}
-.principal{
+} */
+
+/* Estilos de descripcion.html */
+.principal_descripcion{
     
     width: 1000px;
-    height: 500px;
+    height: 600px;
     margin: auto;
-    box-shadow: 0 5px 5px 8px rgba(57, 2, 255, 0.2); ;
+    box-shadow: 0 5px 5px 8px rgba(116, 116, 117, 0.2); ;
     margin-top: 30px;
     /* background: linear-gradient(360deg, rgb(143, 145, 146),rgb(54, 54, 54)); */
-    background-image: url(../img/chat.jpg);
+    background-image: url(../img/18410.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     padding-top: 15px;
    
     
-
-    
 }
-.conten{
+.contenido_descripcion{
      /* background-color: rgba(76, 121, 124, 0.418); */
      background-color: transparent;
     border: 2px solid rgba(0, 0, 0, 0.4);
@@ -101,25 +102,27 @@ header h1{
  
 }
 
-.todo{
+.info_descripcion{
 
     width: 90%;
     color: rgb(0, 0, 0);
     height: 90%;
     margin: auto;
     padding-top: 20px;
+    margin-bottom: 10px;
     
 }
-.todo h1{
+.info_descripcion h1{
     text-align: center;
     padding-bottom: 20px;
     
 }
-.todo hr{
+.info_descripcion hr{
     text-align: center;
     margin-top: 40px;
     border: solid 3px rgba(0, 0, 0, 1.1);
     border-radius: 50px;
+    
     
 }
 
@@ -129,60 +132,11 @@ header h1{
     justify-content: space-between;
     margin: 0px 30px;
     color: rgb(128, 134, 134);
-}
-
-.principal2{
-    
-    width: 800px;
-    height: 500px;
-    margin: auto;
-    box-shadow: 0 5px 5px 8px rgba(57, 2, 255, 0.2); ;
-    margin-top: 30px;
-    /* background: linear-gradient(360deg, rgb(143, 145, 146),rgb(54, 54, 54)); */
-    background-image: url(../img/chat.jpg);
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    padding-top: 15px;
-    
-   
     
 }
 
-.conten2{
-    /* background-color: rgba(76, 121, 124, 0.418); */
-    background-color: transparent;
-   border: 2px solid rgba(0, 0, 0, 0.4);
-   border-radius: 10px;
-   width: 80%;
-   height: 80%;
-   margin: 50px 100px ;
-   backdrop-filter: blur(8px);
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-   word-wrap: break-word; /* para que no se desborde de la caja la letra */
-   display: flex;
-   justify-content: space-between;
-  
-   
 
-}
-.aside{
-    width: 300px;
-    height: 300px;
-    border: 2px red solid;
-}
-
-.container-content{
-    width: 1200px;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    
-    
-}
-
+/* Nosotros */
 article{
     width: 1200px;
     padding: 20px;
@@ -199,8 +153,8 @@ article h1{
 
 }
 
-/*aside de articulos */
-.cuadro{
+/*Contenedores Home */
+.contenedor_home{
     margin: auto;
     width: 850px;
     border-radius: 6px;
@@ -209,38 +163,12 @@ article h1{
     padding-bottom: 40px;
     margin-bottom: 20px;
     display: flex;
+    margin-top: 40px;
     
   
-   
-    
-    
-
 }
 
-
-.container-aside aside img{
-    width: 100%;
-}
-
-.container-aside aside h2,
-.container-aside aside p{
-    margin-top: 20px;
-    padding: 0px 20px;
-}
-.container-aside aside button{
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 10px 50px;
-    font-size: 16px;
-    background: blueviolet;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    
-
-}
-.malparido{
+.post_destacado{
     border: solid 2px black;
     padding: 40px;
     margin: 20px;
@@ -251,42 +179,43 @@ article h1{
     
     
 }
-.malparido img{
+.post_destacado img{
     width: 100%;
     margin: auto;
     margin-bottom: 20px;
     margin-left: 10px;
 }
-.malparido p{
+.post_destacado{
     margin-left: 10px;
 }
-.malparido h1{
+.post_destacado h1{
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     font-family: "Lemon", sans-serif;
 }
-.prueba{
+.sub_contenedor{
     border: 2px solid black;
     display: flex;
     width: 500px;
   display: block;
 }
 
-.cuadro {
-    display: flex; /* Usamos flexbox para alinear los elementos */
-    justify-content: space-between; /* Deja un espacio entre los contenedores */
-    width: 1000px;
-}
+
 
 .contenido {
-    flex: 1; /* El contenedor de las publicaciones ocupa todo el espacio disponible */
+    flex: 1; 
     display: flex;
-    flex-direction: column; /* Alineamos las publicaciones en columna */
-    gap: 20px; /* Espaciado entre cada publicación */
+    flex-direction: column; 
+    gap: 20px; 
     
 }
 
-.prueba {
+#contenido{
+    text-align: center;
+    color: aqua;
+}
+
+.sub_contenedor {
     border: 1px solid #ccc; /* Agregar borde a cada publicación para diferenciarla */
     padding: 15px;
     background: url(../img/18410.jpg);
@@ -299,15 +228,28 @@ article h1{
     margin: 20px;
     
 }
-.prueba h1{
+.sub_contenedor h1{
     text-align: center;
     color: black;
     text-decoration: none;
 }
-.prueba a{
+.sub_contenedor a{
     text-decoration: none;
 }
-.malparido {
+
+.sub_contenedor hr{
+
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 50%;
+   
+}
+.sub_contenedor p{
+    margin-top: 20px;
+    text-align: center;
+}
+.post_destacado {
     width: 350px; /* Establecemos el tamaño del "aside" */
     
     border-radius: 5px;
@@ -331,23 +273,7 @@ article h1{
     
     
 }
-.prueba hr{
 
-    width: 100%;
-    height: 5px;
-    background-color: #000000;
-    border-radius: 50%;
-   
-}
-.prueba p{
-    margin-top: 20px;
-    text-align: center;
-}
-
- #contenido{
-    text-align: center;
-    color: aqua;
-}
 
 /* Estilos generales del formulario */
 .formulario {
@@ -363,12 +289,12 @@ article h1{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de los grupos de campos (form-group) */
+
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Estilo para las etiquetas (labels) */
+
 .form-group label {
     display: block;
     font-weight: bold;
@@ -377,7 +303,7 @@ article h1{
     color: #333;
 }
 
-/* Estilo para los campos de entrada (inputs, textarea) */
+
 .form-group input, 
 .form-group textarea {
     width: 100%;
@@ -395,10 +321,11 @@ article h1{
     outline: none;
 }
 
-/* Estilo del botón de envío */
+
 .btn {
     background-color: #434444;
     color: white;
+    font-weight: 500;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -410,8 +337,10 @@ article h1{
 
 .btn:hover {
     background-color: #030303;
+    transition: background-color 0.5s, color 0.300s; 
 }
 
+/* Estilos footer */
 .footer{
     width: 100%;
     height: 200px;
@@ -471,4 +400,34 @@ article h1{
 .contenedoraside img{
 
     width: 100px;
+}
+
+/* Editar publicacion */
+
+.botones{
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+   
+    
+    margin-top: 10px;
+    
+}
+.boton_editar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 10px;
+   
+    width: 20%;
+    height: 50px;
+    background-color:#555;
+    color: black;
+    border: 2px solid black;
+    
 }
