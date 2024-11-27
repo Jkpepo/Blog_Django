@@ -1,2 +1,2 @@
 # Blog_Django
- Blog funcional con Django
+ Blog funcional con Django -
