@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MESSAGE_STORAGE= "django.contrib.messages.storage.cookie.CookieStorage" #Para enviar mensajes como alertas
+
 
 # Application definition
 

@@ -1,7 +1,29 @@
 {% extends "base.html" %}
+{% block title %} Descripcion {% endblock %}
 {% load static %}
-{% block content %}
 
+{% block js%}
+<script>
+    function eliminar(id){
+        Swal.fire({
+            "title":"¿Estas seguro?",
+            "text":"Esta accion no se puede deshacer",
+            "icon":"question",
+            "showCancelButton": true
+            
+        }).then(function(result){
+            if(result.isConfirmed){
+                window.location.href ="/eliminar/"+ id +"/";
+        }
+
+    });
+}
+</script>
+
+
+{% endblock %}
+
+{% block content %}
 
 <div class="principal_descripcion">
     <div class="contenido_descripcion">
@@ -9,24 +31,25 @@
             
             <h1>{{ publicacion.titulo|title }}</h1>
             <p>{{ publicacion.contenido }}</p>
-            <hr>
             
+           
         </div>
         
         <div class="autor-publi">
             
             <h5>{{publicacion.autor}}</h5>
-            <h6>{{publicacion.fecha_publicacion}}</h6>
+            <h6 class="pru">{{publicacion.fecha_publicacion}}</h6>
         </div>
         
-        
+         <div class="botones">
+    
+            <a href= "{% url 'editar' publicacion.id %} "class="boton_editar" >Editar</a>
+        <a href= "#"class="boton_eliminar" onclick="eliminar({{publicacion.id}})" >Eliminar</a>
+        </div> 
         
     </div><!--conten-->
-</div> <!--principal-->
-<div class="botones">
     
-    <a href= "{% url 'editar' publicacion.id %} "class="boton_editar" >Editar</a>
-<a href= "{% url 'editar' publicacion.id %} "class="boton_editar" >Eliminar</a>
-</div>
+</div> <!--principal-->
+
 {% include "footer.html" %}
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from . models import Publicaciones
 from . forms import PublicacionesForm 
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -17,26 +18,29 @@ def home(request):
     # paginas=range(1,publicaciones.paginator.num_pages +1)# esto es para que funcione normal a medida que hay mas elementos crea mas paginas
     return render(request,"home.html",{"publicaciones":publicaciones,"paginas":paginas,"pagina_actual":pagina_actual})
 
+################### BASE DEL PROYECTO #################
 def base(request):
     return render(request,"base.html")
 
+######################## VISTA PARA MOSTRAR TO.DO EL CONTENIDO ###############
 def descripcion(request,id):
     publicacion=Publicaciones.objects.get(id=id)
     return render(request,"descripcion.html",{"publicacion":publicacion})
 
+##################### CREAR UN BLOG NUEVO########################
 def crear_publicacion(request):
     if request.method == 'POST':
         formulario=PublicacionesForm(request.POST)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request," Blog se agregó correctamente")
             return redirect('home')
         else:
             return render(request,"crearpublicacion.html",{"formulario":formulario})
     formulario=PublicacionesForm()
     return render (request,"crearpublicacion.html",{'formulario':formulario})
 
-def nosotros(request):
-    return render(request,"nosotros.html")
+#################################### EDITAR EL BLOG MEDIANTE SU ID ################
 
 def editar(request,id):
     formulario = get_object_or_404(Publicaciones,pk=id)
@@ -44,11 +48,21 @@ def editar(request,id):
         formulario = PublicacionesForm(request.POST, instance=formulario)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request, f"Has editado el blog:  {formulario.cleaned_data['titulo']}")
             return redirect('home')
     else:
         formulario = PublicacionesForm(instance=formulario)
     return render(request,'editar_publicacion.html',{'formulario':formulario})
+
+############################### ELIMINAR EL BLOG MEDIANTE EL ID  ################################
+
+def eliminar(request,id):
+    formulario=Publicaciones.objects.get(id=id)
+    messages.success(request,f"Has eliminado el blog:  {formulario.titulo}")
+    formulario.delete()
+    return redirect("home")
     
+########################### VISTA PAGINA NOSOTROS 
 
-
-
+def nosotros(request):
+    return render(request,"nosotros.html")
