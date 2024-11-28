@@ -26,6 +26,7 @@ INTRUCCIONES PARA SU USO:
    "Open Folder"(Abrir Carpeta) y seleccionamos la carpeta que acabamos de extraer, esto nos cargara el proyecto
 
 9)En una terminal ejecutamos el siguiente comando cd Blog_Django-main\Blog_Django y presionamos enter
+
 10) Ahora ejecutaremos py manage.py runserver y enter y nos debe aparecer algo asi:
     
     System check identified no issues (0 silenced).
